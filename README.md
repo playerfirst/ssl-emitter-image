@@ -8,7 +8,7 @@ The Dockerfile in this repository starts from the base Emitter image and include
 
 ## Publishing to Azure Container Registry 
 
-First edit the `build-and-publish.sh` changing the variables as needed.
+First edit the `build-and-publish.sh` changing the variables at the top as needed.
 
 Login and run the script to upload the new image!
 
@@ -49,6 +49,6 @@ To use a custom configuration for Emitter.io:
 
     a. if running locally head to http://127.0.0.1:8080/keygen and plug in the `secret key` to get a new `channel key` 
 
-    b. if running in azure head to https://playerfirst-staging-emitter.azurewebsites.net/keygen and plug in the `secret key` to get a new `channel key` 
+    b. if running in azure head to https://playerfirst-staging-emitter.azurewebsites.net/keygen and plug in the `secret key` and `channel` to get a new `channel key` 
 
     b. update your code with the new `channel` and `channel key` 
