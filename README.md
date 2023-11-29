@@ -1,4 +1,4 @@
-# Emitter.io Docker Configuration
+# Emitter\.io Docker Configuration
 
 This repository contains the configuration for setting up an Emitter.io server
 
@@ -8,15 +8,21 @@ The Dockerfile in this repository starts from the base Emitter image and include
 
 ## Publishing to Azure Container Registry 
 
-    ```bash
-    ./build-image.sh
-    ```
+First edit the `build-and-publish.sh` changing the variables as needed.
+
+Login and run the script to upload the new image!
+
+```bash
+az login
+az acr login --name playerfirst
+./build-and-publish.sh
+```
 
 ## Run the Docker Container 
 
-    ```bash
-    docker run -d --name emitter -p 80:80 --platform linux/amd64 -e --restart=unless-stopped playerfirst-staging-emitter
-    ```
+```bash
+docker run -d --name emitter -p 80:80 --platform linux/amd64 -e --restart=unless-stopped playerfirst-staging-emitter
+```
 
 ## Editing Configuration
 
