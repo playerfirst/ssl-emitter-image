@@ -1,24 +1,23 @@
 # Emitter.io Docker Configuration
 
-This repository contains the Docker configuration for setting up an Emitter.io server
+This repository contains the configuration for setting up an Emitter.io server
 
 ## Docker Configuration
 
-The Dockerfile in this repository starts from the base Emitter image and includes steps to copy a custom configuration file into the image. It is configured to expose ports 8080 (http).
+The Dockerfile in this repository starts from the base Emitter image and includes steps to copy a custom configuration file into the image. It is configured to expose ports 80 for the smoothest integration.
 
-## Steps to Build and Run
-
-1. **Build the Docker Image:**
+## Publishing to Azure Container Registry 
 
     ```bash
     ./build-image.sh
     ```
 
-2. **Run the Docker Container:**
+## Run the Docker Container 
 
     ```bash
-    docker run -d --name emitter -p 443:443 -p 8080:8080 --platform linux/amd64 -e --restart=unless-stopped playerfirst-staging-emitter
+    docker run -d --name emitter -p 80:80 --platform linux/amd64 -e --restart=unless-stopped playerfirst-staging-emitter
     ```
+
 ## Editing Configuration
 
 To use a custom configuration for Emitter.io:
@@ -42,26 +41,8 @@ To use a custom configuration for Emitter.io:
    
 4. Generating a new channel key
 
-    a. head to http://127.0.0.1:8080/keygen and plug in the `secret key` to get a new `channel key` 
+    a. if running locally head to http://127.0.0.1:8080/keygen and plug in the `secret key` to get a new `channel key` 
+
+    b. if running in azure head to https://playerfirst-staging-emitter.azurewebsites.net/keygen and plug in the `secret key` to get a new `channel key` 
 
     b. update your code with the new `channel` and `channel key` 
-
-## Publishing to Azure Container Registry 
-
-Below is an example of publishing the image for staging after it is built.
-
-Login
-```bash
-az login
-az acr login --name playerfirst
-```
-
-Tag it for publishing
-```bash
-docker tag playerfirst-staging-emitter playerfirst.azurecr.io/playerfirst:playerfirst-staging-emitter
-```
-
-Publish it to the repo
-```bash
-docker push playerfirst.azurecr.io/playerfirst:playerfirst-staging-emitter
-```
