@@ -48,7 +48,10 @@ To use a custom configuration for Emitter.io:
     docker run -d --name emitter -p 8080:8080 --restart=unless-stopped emitter/server
     ```
 
-    b. Look at the logs for `generated new license:` and `generated new secret key:` values. You will need both these values.
+    b. Look at the logs for `generated new license:` and `generated new secret key:` values. You will need both these values like in Figure 1.
+
+    ![image](new-license.png)
+    *Figure 1: New License and Secret*
 
     c. edit emitter.conf and update the `license` value
    
