@@ -10,4 +10,5 @@ COPY certs/key.pem /root/key.pem
 
 # Expose necessary ports (such as for SSL)
 EXPOSE 443
+EXPOSE 8080
 
