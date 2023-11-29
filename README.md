@@ -26,7 +26,7 @@ In production you can amend this to replace the self signed certs with certs for
 2. **Build the Docker Image:**
 
     ```bash
-        ./build-image.sh
+    ./build-image.sh
     ```
 
 3. **Run the Docker Container:**
