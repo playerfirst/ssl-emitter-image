@@ -54,7 +54,7 @@ To use a custom configuration for Emitter.io:
 
     a. head to https://127.0.0.1/keygen and plug in the `secret key` to get a new `channel key` 
 
-    b. update your code with the new `channel` and `channel key` as per the new secret key make in step 2
+    b. update your code with the new `channel` and `channel key` 
 
 ## Publishing to Azure Container Registry 
 
