@@ -17,7 +17,6 @@ A shell script is provided to generate self-signed SSL certificates. This script
 1. **Clone the Repository**:
 
    ```bash
-   git clone [Your Repository URL]
    cd [Your Repository Directory]
    chmod +x generate_certs.sh
    ./generate_certs.sh
@@ -38,3 +37,11 @@ A shell script is provided to generate self-signed SSL certificates. This script
 To use a custom configuration for Emitter.io:
 
 1. Edit the emitter.conf file with your desired settings.
+
+2. Generating a new license value
+
+  a. Run ```bash docker run -d --name emitter -p 8080:8080 --restart=unless-stopped emitter/server ```
+  b. Look at the logs for `generated new license:` and `generated new secret key:` you will need both these values
+  c. edit emitter.conf and update the `license` value
+  d. head to https://127.0.0.1/keygen and plug in the secret key to get a new channel key 
+  e. update your code with the new values
