@@ -1,0 +1,7 @@
+{
+    "host": "playerfirst-staging-emitter.azurewebsites.net",
+    "port" : 80,
+    "keys":{
+        "staging/solver/status" : "bmJA7A3D3soLAyagVMwGCB9EffKBsuGa"
+    }
+}
