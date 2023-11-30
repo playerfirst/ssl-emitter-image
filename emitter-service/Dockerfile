@@ -13,12 +13,10 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-# Make port 3000 available to the world outside this container
-EXPOSE 3000
-
+EXPOSE 80
 # Define environment variable for Emitter.io key
 ENV EMITTER_KEY your_emitter_key_here
 
 # Run the app when the container launches
-CMD ["node", "publish.js"]
+CMD ["node", "service.js"]
 
